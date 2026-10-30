@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-[#F7F9F2] text-[#0A1C15] font-sans antialiased selection:bg-[#10B981]/30 selection:text-[#064E3B] overflow-x-hidden min-h-screen;
+  }
+}
+
+/* Light Glassmorphism Panel (For Light Surfaces) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(6, 78, 59, 0.08);
+  color: #0A1C15;
+}
+
+/* Dark Glassmorphism Banner (For Dark Hero Cards) */
+.glass-banner-dark {
+  background: linear-gradient(135deg, #064E3B 0%, #041E17 100%) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 14px 40px -5px rgba(0, 0, 0, 0.35) !important;
+  color: #FFFFFF !important;
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 249, 242, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #0A1C15;
+}
+
+.glass-card:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 12px 30px -8px rgba(16, 185, 129, 0.28);
+  transform: translateY(-2px);
+}
+
+/* Neon Glow Effects */
+.neon-glow-btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.neon-glow-btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #10B981, #D9F99D, #059669);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.neon-glow-btn:hover::after {
+  opacity: 0.8;
+}
+
+/* Animated Gradient Mesh Background */
+.animated-mesh-bg {
+  background: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.18) 0%, transparent 40%),
+              radial-gradient(circle at 85% 30%, rgba(217, 249, 157, 0.22) 0%, transparent 45%),
+              radial-gradient(circle at 50% 80%, rgba(6, 78, 59, 0.12) 0%, transparent 50%),
+              #F7F9F2;
+  background-size: 140% 140%;
+  animation: gradient-mesh 14s ease-in-out infinite alternate;
+}
+
+.animated-mesh-dark {
+  background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(217, 249, 157, 0.15) 0%, transparent 45%),
+              #041E17;
+  background-size: 150% 150%;
+  animation: gradient-mesh 16s ease-in-out infinite alternate;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F9F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A7F3D0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* Animated Custom Floating Orbs */
+.bg-orb-1 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(5,150,105,0.05) 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.bg-orb-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(217,249,157,0.4) 0%, rgba(167,243,208,0.05) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
